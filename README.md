@@ -5,3 +5,18 @@
 
 2. Criação de Projeto:   
    `nest new nome-do-projeto`
+
+3. Descartar arquivos default
+   * app.controller.spec.ts
+   * ./test
+
+
+Monitoramento em tempo de xecução:   
+`npm run start:dev`
+
+
+Criação de modules: 
+`nest g modulo <nomeModulo>`
+
+Controller recebe os verbos HTTP
+`nest g controller <nomeController>`
