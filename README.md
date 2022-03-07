@@ -11,12 +11,13 @@
    * ./test
 
 
-Monitoramento em tempo de xecução:   
+Monitoramento em tempo de xecução:  
 `npm run start:dev`
-
 
 Criação de modules: 
 `nest g modulo <nomeModulo>`
 
 Controller recebe os verbos HTTP
 `nest g controller <nomeController>`
+
+
