@@ -9,40 +9,37 @@ import {
 } from '@nestjs/common';
 
 import Produto from './produtos.model';
+import { ProdutosService } from './produtos.service';
 
 @Controller('produtos')
 export class ProdutosController {
-  // Mock de produtos
-  produtos: Produto[] = [
-    new Produto('lIV01', 'Livro TDD e BDD na Pratica', 29.9),
-    new Produto('lIV02', 'Livro Iniciando com Flutter', 39.9),
-    new Produto('lIV01', 'Inteligência artificial como serviço', 49.9),
-  ];
+
+  constructor(private produtosService: ProdutosService){
+
+  }
 
   @Get()
   obterTodos(): Produto[] {
-    return this.produtos;
+    return this.produtosService.obterTodos();
   }
 
   @Get(':id')
-  obterUm(@Param() produto: Produto): Produto {
-    return this.produtos[0];
+  obterUm(@Param() params): Produto {
+    return this.produtosService.obterUm(params.id);
   }
 
   @Post()
   criar(@Body() produto: Produto){
-    produto.id = 100
-    this.produtos.push(produto)
-
+    this.produtosService.criar(produto)
   }
 
   @Put()
   alterar(@Body() produto: Produto): Produto {
-    return produto;
+    return this.produtosService.alterar(produto)
   }
 
   @Delete(':id')
   deletar(@Param() params) {
-    this.produtos.pop()
+    this.produtosService.apagar(params.id)
   }
 }

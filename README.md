@@ -10,14 +10,22 @@
    * app.controller.spec.ts
    * ./test
 
-
+---   
 Monitoramento em tempo de xecução:  
 `npm run start:dev`
 
-Criação de modules: 
+---   
+
+Criação de modules:   
 `nest g modulo <nomeModulo>`
 
-Controller recebe os verbos HTTP
+Controller recebe os verbos HTTP:   
 `nest g controller <nomeController>`
 
+---
 
+Criação da MODEL:    
+Utilizar método construtor: ***constructor***
+
+Criação do SERVICE:   
+O Serviço é criado o com o conceito de injeção de dependência
